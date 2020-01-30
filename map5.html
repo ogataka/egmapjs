@@ -27,7 +27,7 @@ window.onload = function() {
 		select ?uri ?name ?lat ?lng {
 			?uri ic:名称 [ ic:表記 ?name ].
 			?uri ic:地理座標 [ ic:緯度 ?lat; ic:経度 ?lng; ].
-			filter(contains(str(?name),'体育館'))
+			filter(contains(str(?name),'病院'))
 			filter(
 				xsd:float(?lat) < $LAT_MAX && xsd:float(?lng) > $LNG_MIN &&
 				xsd:float(?lat) > $LAT_MIN && xsd:float(?lng) < $LNG_MAX
