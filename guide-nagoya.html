@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<style>
+
+    body { margin: 0; font-family: sans-serif; text-align: center; width:193px; height:130px}
+
+    #imgarea {width:193px; height:130px}
+
+</style>
+
+
+
+<body> 
+
+
+
+<!-- <img width="600" hight="600"> --> 
+
+
+
+<a href="javascript:imageChanger(-1)">前へ</a> <img src="image/1.png" name="photo"> <a href="javascript:imageChanger(1)">次へ</a>
+
+<script type="text/javascript">
+
+	
+
+<input type="button" onclick="location.href='./welcome.html'" value="Home">
+
+	
+
+imgFile = new Array("image/1.png","image/2.png","image/3.png","image/4.png","image/5.png","image/6.png",
+
+                    "image/7.png","image/8.png","image/9.png","image/10.png","image/11.png",
+
+                    "image/12.png","image/13.png","image/14.png","image/15.png","image/16.png"); //*1
+
+		
+
+count = 0; //*2
+
+function imageChanger(num) {
+
+	//切替番号
+
+	count += num; //*3
+
+	//画像の枚数確認
+
+	if (count >= imgFile.length) count = 0; //*4 枚数を超えるとき
+
+	if (count < 0) count = imgFile.length - 1; //*5 0番目より小さいとき
+
+	//画像出力
+
+	document.photo.src =imgFile[count]; //*6
+
+}
+
+
+
+</script>
+
+	 
+
+</body>
+
+</html>
